@@ -10,6 +10,7 @@ bool App::OnInit() {
     MainFrame *frame = new MainFrame(wxT("My App"));
 
     frame->Show(true);
+    frame->Center();
 
     return true;
 }
