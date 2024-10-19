@@ -8,17 +8,7 @@ enum {
 
 MainFrame::MainFrame(const wxString &title) : wxFrame(NULL, wxID_ANY, title) {
     // Create the menus
-    wxMenuBar *menuBar = new wxMenuBar();
-
-    wxMenu *mnuFile = new wxMenu();
-    wxMenu *mnuHelp = new wxMenu();
-
-    mnuFile->Append(ID_QUIT, wxT("&Quit...\tAlt+Q"), wxT("Quit the window."));
-    mnuHelp->Append(ID_ABOUT, wxT("&About...\tAlt+A"), wxT("Show about dialog."));
-
-    menuBar->Append(mnuFile, wxT("&File"));
-    menuBar->Append(mnuHelp, wxT("&Help"));
-    SetMenuBar(menuBar);
+    this->CreateMenus();
 
     // Create a status bar
     CreateStatusBar(3);
@@ -40,4 +30,18 @@ void MainFrame::OnAbout(wxCommandEvent &event) {
 
 void MainFrame::OnQuit(wxCommandEvent &event) {
     Close();
+}
+
+void MainFrame::CreateMenus() {
+    wxMenuBar *menuBar = new wxMenuBar();
+
+    wxMenu *mnuFile = new wxMenu();
+    wxMenu *mnuHelp = new wxMenu();
+
+    mnuFile->Append(ID_QUIT, wxT("&Quit...\tAlt+Q"), wxT("Quit the window."));
+    mnuHelp->Append(ID_ABOUT, wxT("&About...\tAlt+A"), wxT("Show about dialog."));
+
+    menuBar->Append(mnuFile, wxT("&File"));
+    menuBar->Append(mnuHelp, wxT("&Help"));
+    SetMenuBar(menuBar);
 }

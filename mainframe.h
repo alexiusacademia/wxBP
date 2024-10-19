@@ -6,6 +6,8 @@ public:
 
     void OnAbout(wxCommandEvent &event);
     void OnQuit(wxCommandEvent &event);
+    
+    void CreateMenus();
 private:
     DECLARE_EVENT_TABLE();
 };
