@@ -1,0 +1,1 @@
+g++ main.cpp mainframe.cpp -o main `wx-config --cxxflags --libs` -std=c++11
