@@ -8,6 +8,7 @@ public:
     void OnQuit(wxCommandEvent &event);
     
     void CreateMenus();
+    void CreateStatusBar();
 private:
     DECLARE_EVENT_TABLE();
 };

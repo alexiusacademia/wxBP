@@ -11,10 +11,7 @@ MainFrame::MainFrame(const wxString &title) : wxFrame(NULL, wxID_ANY, title) {
     this->CreateMenus();
 
     // Create a status bar
-    CreateStatusBar(3);
-    SetStatusText(wxT("Column 1"), 0);
-    SetStatusText(wxT("Column 2"), 1);
-    SetStatusText(wxT("Column 3"), 2);
+    this->CreateStatusBar();
 }
 
 BEGIN_EVENT_TABLE(MainFrame, wxFrame)
@@ -44,4 +41,11 @@ void MainFrame::CreateMenus() {
     menuBar->Append(mnuFile, wxT("&File"));
     menuBar->Append(mnuHelp, wxT("&Help"));
     SetMenuBar(menuBar);
+}
+
+void MainFrame::CreateStatusBar() {
+    CreateStatusBar(3);
+    SetStatusText(wxT("Column 1"), 0);
+    SetStatusText(wxT("Column 2"), 1);
+    SetStatusText(wxT("Column 3"), 2);
 }
