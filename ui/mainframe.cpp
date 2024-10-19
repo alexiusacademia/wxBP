@@ -44,7 +44,7 @@ void MainFrame::CreateMenus() {
 }
 
 void MainFrame::CreateStatusBar() {
-    CreateStatusBar(3);
+    wxFrameBase::CreateStatusBar(3);
     SetStatusText(wxT("Column 1"), 0);
     SetStatusText(wxT("Column 2"), 1);
     SetStatusText(wxT("Column 3"), 2);
